@@ -4,6 +4,12 @@ import { memo } from 'react';
 // import { subscribe } from '../lib/mailchimp';
 import { mainMenu } from './Nav';
 
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  LinkedinShareButton,
+} from 'react-share';
+
 function Hero() {
   // const [email, setEmail] = useState<string>('');
   // const [subscribed, setSubscribed] = useState<boolean>(false);
@@ -20,6 +26,9 @@ function Hero() {
   //     // Pass
   //   }
   // }
+
+  const shareUrl = 'https://your-website-url.com';
+  const title = 'Check out this awesome project!';
 
   return (
     <div className="pb-20 sm:pb-48 lg:pb-20">
@@ -89,6 +98,18 @@ function Hero() {
                       : 'We hate spam as much as you do.'}
                   </p>
                 </form> */}
+
+                <div className="flex space-x-4 mt-5">
+                  <FacebookShareButton url={shareUrl} quote={title}>
+                    Share on Facebook
+                  </FacebookShareButton>
+                  <TwitterShareButton url={shareUrl} title={title}>
+                    Share on Twitter
+                  </TwitterShareButton>
+                  <LinkedinShareButton url={shareUrl} title={title}>
+                    Share on LinkedIn
+                  </LinkedinShareButton>
+                </div>
               </div>
             </div>
           </div>
